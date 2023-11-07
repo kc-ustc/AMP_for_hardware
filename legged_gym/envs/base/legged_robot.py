@@ -61,7 +61,7 @@ HIP_OFFSETS = torch.tensor([
 class LeggedRobot(BaseTask):
     def __init__(self, cfg: LeggedRobotCfg, sim_params, physics_engine, sim_device, headless):
         """ Parses the provided config file,
-            calls create_sim() (which creates, simulation, terrain and environments),
+            calls create_sim() (which creates, simulation, terrain and environments),  创建环境 create_sim()
             initilizes pytorch buffers used during training
 
         Args:
