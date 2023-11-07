@@ -122,8 +122,8 @@ class LeggedRobot(BaseTask):
         clip_obs = self.cfg.normalization.clip_observations
         self.obs_buf = torch.clip(self.obs_buf, -clip_obs, clip_obs)
         if self.cfg.env.include_history_steps is not None:
-            self.obs_buf_history.reset(reset_env_ids, self.obs_buf[reset_env_ids])#把上一步的清了
-            self.obs_buf_history.insert(self.obs_buf)#把这一步的加上
+            self.obs_buf_history.reset(reset_env_ids, self.obs_buf[reset_env_ids]) 把上一步的清了
+            self.obs_buf_history.insert(self.obs_buf) 把这一步的加上
             policy_obs = self.obs_buf_history.get_obs_vec(np.arange(self.include_history_steps))
         else:
             policy_obs = self.obs_buf
